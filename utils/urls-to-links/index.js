@@ -3,7 +3,7 @@
  * @param {string} text - 需要处理的文本
  * @returns {string} - 处理后的文本，其中的 URL 已转换为 HTML 链接
  */
-function convertUrlsToLinks(text) {
+export default function urlsToLinks(text) {
   // 若输入不是字符串，直接返回空字符串
   if (typeof text !== "string") return "";
 

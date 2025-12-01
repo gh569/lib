@@ -108,4 +108,4 @@ function showToast(message, duration = 1500) {
 }
 
 
-export { showToast, copyToClipboard, copyToClipboard as copy, copyToClipboard as default };
+export { copyToClipboard, copyToClipboard as default };
