@@ -55,9 +55,9 @@ function withCssModule(Component, styles) {
       .filter(cls => cls)
       .map(cls => {
         // 短横线转驼峰（适配CSS user-avatar → styles.userAvatar）
-        const camelCls = cls.replace(/-(\w)/g, (_, c) => c.toUpperCase());
+        // const camelCls = cls.replace(/-(\w)/g, (_, c) => c.toUpperCase());
         // 优先使用模块化类名（局部隔离），无则保留原始类名（兼容全局）
-        return styles[camelCls] || cls;
+        return styles[cls] || cls;
       })
       .join(' ');
   };
