@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>2048</title>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<script>
+			const path='https://env-00jxhocqgh3m-static.normal.cloudstatic.cn/static/lib/jq/'
+			const bootcss=`<link rel="stylesheet" href="bootstrap.min.css"  crossorigin="anonymous">`
+			const jqjs=`<script src="jquery-3.3.1.js" 	crossorigin="anonymous"></${'script'}>`
+			const bootjs=`<script src="bootstrap.min.js"  crossorigin="anonymous"></${'script'}>`
+			const eventjs=`<script src="EventUtil.js" ></${'script'}>`
+			document.write(bootcss)
+			document.write(jqjs)
+			document.write(bootjs)
+			document.write(eventjs)
+		</script>
+		<link rel="stylesheet" href="./style.css">
+		<link href="./css.css" rel="stylesheet" type="text/css">
+		<script src="./init.js"></script>
+		<script src='./backbutton.js'></script>
+	</head>
+	<body>
+		<header id="my2048">
+			<div id="head">
+				<h1 class="text-center text-primary title" style="font-size:40px">2048
+					<br><button id="new_game" style="font-size:16px;margin-left: 200px;">New Game</button>
+				</h1>
+				<p style="position: relative;text-align: center;"></p>
+			</div>
+		</header>
+		<div id="game-body" class="text-center">
+		</div>
+
+		<div id="score" class="score row">
+			<div class="score text-center col-md-8 col-xs-8" style="display: inline-block">
+				Score: <span id="score_value">0</span><br>
+				Best: <span id="best_value">0</span>
+			</div>
+		</div>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+
+:root{
+  --bawei-right-width: 150px;
+}
+
+.baweiFull{
+  width: 100%;
+  height: 100vh;
+}
+
+.baweiCenter {
+  display: flex;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.left { 
+  max-width: 350px;
+  min-width: 150px;
+  width: calc(100% - var(--bawei-right-width));
+  background-color: white;
+}
+
+.leftItem{
+  display: flex;
+  justify-content:flex-end;
+}
+.leftItemColor{
+  composes: leftItem;
+  background-color: #eeeeff;
+
+}
+.txtIndex{
+  min-width: 30px;
+  width: 10%;
+}
+.txtContent{
+  min-width: 100px;
+  width: 50%;
+  white-space: nowrap;/*设置不换行*/
+ overflow: hidden; /*设置隐藏*/
+  text-overflow: ellipsis; /*设置隐藏部分为省略号*/
+}
+.txtValue{
+  min-width: 50px;
+  width: 20%;
+}
+
+.txtValueColor {
+  composes: txtValue;
+  background-color: #ffb330;
+}
+
+.right {
+  width: var(--bawei-right-width);
+  height: 100%;
+  background-color: #eee;
+ 
+  vertical-align: top;
+}
+.rightFile {
+  width: 120px;
+  margin: 10px;
+}
+.rightItem {
+  display: flex;
+  margin: 10px;
+  width: 120px;
+}
+.rightItemTitle {
+  margin-left: 5px;
+  width: auto;
+}
+.rightItemInput {
+  margin-left: 5px;
+  width: 50px;
+}
+.selectName {
+  width: 120px;
+  margin: 5px;
+}
+

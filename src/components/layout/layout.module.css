@@ -1,0 +1,15 @@
+.h1 {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+.p1{
+   background-color: aliceblue;
+   padding: 15px;
+   padding-bottom: 20px;
+   font-size: large;
+}
+.div1{
+  padding: 15px;
+}

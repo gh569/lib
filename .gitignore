@@ -1,0 +1,9 @@
+node_modules/
+dist/
+test/
+.project
+unpackage/
+.DS_Store
+.hbuilderx/
+.debugTemp/
+" " 

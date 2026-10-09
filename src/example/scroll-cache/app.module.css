@@ -1,0 +1,12 @@
+.item {
+  margin: 5px;
+  padding: 5px;
+  color: blue;
+  text-decoration: underline;
+}
+
+.item:hover {
+  color: red;
+  background-color: #eee;
+  text-decoration: none ;
+}
