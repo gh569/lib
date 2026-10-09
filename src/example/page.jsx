@@ -53,7 +53,7 @@ const routes = generateRoutes(modules, configs);
 function Home() {
   return (
     <div>
-      <h1 className={style.h1}>Home</h1>
+      <h1 className={style.h1}>Home11</h1>
       {routes
         // 提取过滤逻辑到函数中，提高可读性
         .filter((v) => v.title?.lastIndexOf("/") <= 0)
