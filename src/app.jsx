@@ -1,11 +1,11 @@
 import _routes from "~pages";
 import { Router, Route } from "preact-router";
-import { createHashHistory } from "history";
+import { createHashHistory ,createBrowserHistory} from "history";
 import { lazy, Suspense } from "preact/compat";
 import "./app.css";
 
 // 创建 hash 历史记录实例
-const history = createHashHistory();
+const history = createBrowserHistory();
 
 /**
  * 检查组件是否为懒加载组件
