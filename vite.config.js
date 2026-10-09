@@ -1,73 +1,51 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
 import Pages from "vite-plugin-pages";
-import { generateScopedName } from "./css-modules.config";
+import { fileURLToPath, URL } from 'node:url'
 
-// https://vite.dev/config/
-export default defineConfig({
-  base: "./",
-  build: {
-    outDir: "./dist",
-  },
-  plugins: [
-    Pages({
-      extensions: ["jsx"],
-      // exclude: ['**/_*.jsx'],
-      // exclude: ['**/example/**'],
-      dirs: [
-        {
-          dir: "src/example",
-          baseRoute: "",
-          filePattern: "**/page.jsx",
-        },
-      ],
+// 主入口路由模式（唯一可配）：hash / history。
+// 仅主入口 index.html 走此配置；work、zxm 独立入口均恒为 hash（写死在各自 app.jsx）。
+// 切换主入口模式只改这里，构建时通过 define 注入 __ROUTER_MODE__。
+const ROUTER_MODE = "history";
 
-      importMode(filepath, options) {
-        // return filepath.includes("/example") ?
-        // 	"async" :
-        // 	"sync";
-        return "async";
-      },
-    }),
-    preact({
-      babel: {
-        plugins: [
-          [
-            "styled-jsx/babel",
-            {
-              	// optimizeForSpeed: true, // 禁用嵌套编译核心开关
-              	// scoped: true, // 强制给所有类加唯一hash（.jsx-xxx.类名）
-              	// sourceMaps: false // 可选，uniapp打包优化
-            },
-          ],
-          [
-            "@dr.pogodin/babel-plugin-react-css-modules",
-            {
-              generateScopedName: generateScopedName,
-              handleMissingStyleName: "warn",
-              attributeNames: {
-                styleName: "class",
-              },
-              context: __dirname,
-            },
-          ],
-        ],
-      },
-    }),
-  ],
-  resolve: {
-    alias: {
-      // react: "preact/compat",
-      // "react-dom": "preact/compat",
-      my: "/public/lib/preact/index.js",
-      utils: "/public/lib/utils",
-      com: "/src/components",
-      xlsx_url: "https://esm.sh/xlsx@0.18.5",
-    },
-  },
-  css: {
-    modules: {
-      generateScopedName: generateScopedName,
-    },
-  },
+// 公共别名，抽离出来，所有分支共用，避免每个分支重复写、漏写
+const sharedAlias = {
+  '@utils': fileURLToPath(new URL('./src/components/_utils', import.meta.url)),
+  '@com': fileURLToPath(new URL('./src/components', import.meta.url)),
+  // '@supa': fileURLToPath(new URL('./src/components/_supabase', import.meta.url)),
+}
+
+// ✅ 修复入参！{command, mode}
+export default defineConfig(({ command, mode }) => {
+	const env = loadEnv(mode, process.cwd(), "VITE_");
+
+	
+
+	return {
+		base: "./",
+		
+		plugins: [
+			Pages({
+				extensions: ["jsx"],
+				dirs: [{
+					dir: "src/pages",
+					baseRoute: "",
+					filePattern: "**/index.jsx",
+				}],
+				importMode(filepath, options) {
+					return filepath.includes("/example") ? "async" : "sync";
+				},
+			}),
+			preact(),
+		],
+		build: {
+			outDir: "./dist",
+		},
+		resolve: {
+			alias: sharedAlias,
+		},
+	};
+
+	
+
 });
