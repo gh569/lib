@@ -14,7 +14,6 @@ const App = () => {
     <Router >
       <Switch>
         {routes.map(({name,path,component}) => {
-					console.log(path)
           return <Route key={name} path={path} component={component} />;
         })}
         <Route default component={() => <div role="alert">404 - 页面未找到</div>} />
