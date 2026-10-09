@@ -1,0 +1,48 @@
+.baweiFull {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #eee;
+}
+.left {
+  min-width: 200px;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+.leftText {
+  background-color: #eeeeff;
+}
+
+.right {
+  min-width: 120px;
+  padding-left: 10px;
+  height: 100%;
+  background-color: #eee;
+  overflow: auto;
+  vertical-align: top;
+}
+.rightFile {
+  width: 120px;
+}
+.rightItem {
+  display: flex;
+  margin: 10px 0px;
+  width: 120px;
+}
+.rightItemTitle {
+  width: auto;
+}
+.rightItemInput {
+  margin-left: 5px;
+  width: 50px;
+}
+.selectName {
+  width: 110px;
+}
+.resultDif {
+  background-color: #ffb330;
+}

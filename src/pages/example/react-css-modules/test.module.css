@@ -1,0 +1,38 @@
+
+.main-container{
+  width: 100%;
+  height: 100vh;
+ background-color: aliceblue; 
+
+}
+.base{
+ background-color: aliceblue; 
+ width: 100%;
+}
+.h1{
+  color:rgb(245, 240, 240);
+  background-color: rgb(35, 52, 68);
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  composes: base;
+}
+.h2{
+  margin:5px;
+}
+.code{
+  color:rgb(245, 240, 240);
+  background-color: rgb(35, 52, 68);
+  font-size: 15px;
+  width: 100%;
+}
+.test {
+  color:red;
+
+}
+.pre{
+  color:rgb(245, 240, 240);
+  background-color: rgb(35, 52, 68);
+  font-size: 15px;
+}
