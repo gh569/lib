@@ -7,7 +7,7 @@ import { generateScopedName } from "./css-modules.config";
 export default defineConfig({
   base: "./",
   build: {
-    outDir: "./dist/preact",
+    outDir: "./dist",
   },
   plugins: [
     Pages({
