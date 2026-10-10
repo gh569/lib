@@ -23,7 +23,8 @@ function MenuItem({ name, path, isNewWindow }) {
     if (isNewWindow) {
       window.open(path, "_blank");
     } else {
-      route(resolveAbsolutePath(`./060-zxm${path}`));
+			console.log(resolveAbsolutePath(`./`))
+      route(resolveAbsolutePath(`.${path}`));
     }
   };
 
