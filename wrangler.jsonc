@@ -1,6 +1,7 @@
 {
   "name": "litchi",
   "compatibility_date": "2026-10-06",
+  "main": "./dist/_worker.js",
   "assets": {
     "directory": "./dist"
   }
